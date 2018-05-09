@@ -32,7 +32,7 @@ $socket_set->add($listen_socket);
 
 SELECT: while(1) {
 
-	my ($ready_set) = IO::Select->select($socket_set, undef, undef, 0);
+	my ($ready_set) = IO::Select->select($socket_set, undef, undef, 0.25);
 
 	foreach my $r (@$ready_set) {
 
